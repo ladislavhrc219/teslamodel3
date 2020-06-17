@@ -1,15 +1,7 @@
 
-
-
-
-
-
-
-
-
 const sizes = document.querySelectorAll('.size');
+const drives = document.querySelectorAll('.drive');
 const colors = document.querySelectorAll('.color');
-// const wheels = document.querySelectorAll('.wheel-size');
 const cars = document.querySelectorAll('.car');
 const gradients = document.querySelectorAll('.gradient');
 const teslaBg = document.querySelector('.teslaBackground');
@@ -17,16 +9,26 @@ const teslaBg = document.querySelector('.teslaBackground');
 let prevColor = "blue";
 let animationEnd = true;
 
+// click to elements
+sizes.forEach(size => size.addEventListener('click', changeSize));
+// adding function
 function changeSize(){
     sizes.forEach(size => size.classList.remove('active'));
     this.classList.add('active');
 }
 
+drives.forEach(drive => drive.addEventListener('click', changeDrive));
+function changeDrive(){
+    drives.forEach(drive => drive.classList.remove('active'));
+    this.classList.add('active');
+}
+
+
 function changeColor(){
     if(!animationEnd) return;
     let primary = this.getAttribute('primary');
     let color = this.getAttribute('color');
-    // let wheel = document.querySelector(`.car[color="${color}"]`);
+    // let drive = this.getAttribute('color');
     let car = document.querySelector(`.car[color="${color}"]`);
     let gradient = document.querySelector(`.gradient[color="${color}"]`);
     let prevGradient = document.querySelector(`.gradient[color="${prevColor}"]`);
@@ -38,6 +40,9 @@ function changeColor(){
 
     document.documentElement.style.setProperty('--primary', primary);
     
+    // dualdrives.forEach(drive => drive.classList.add('active'));
+    // this.classList.remove('active'); 
+
     cars.forEach(s => s.classList.remove('show'));
     car.classList.add('show');
 
@@ -53,7 +58,7 @@ function changeColor(){
     })
 }
 
-sizes.forEach(size => size.addEventListener('click', changeSize));
+
 colors.forEach(c => c.addEventListener('click', changeColor));
 
 let x = window.matchMedia("(max-width: 1000px)");
