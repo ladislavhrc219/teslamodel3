@@ -71,3 +71,8 @@ function changeHeight(){
 changeHeight();
 
 window.addEventListener('resize', changeHeight);
+
+function deliveryDate () {
+    document.getElementById("deliveryId").classList.add("newStyle");
+    // document.getElementById("myDIV").classList.toggle("newClassName");
+}

@@ -539,3 +539,36 @@ body{
         padding: 20px;
     }
 }
+
+.mystyle {
+    width: 300px;
+    height: 50px;
+    background-color: coral;
+    color: white;
+    font-size: 25px;
+    visibility: hidden;
+  }
+
+.newStyle{
+    width: 500px;
+    height: 50px;
+    background-color: whitesmoke;
+    color: black;
+    font-size: 35px;
+ /* color: cornflowerblue; */
+ visibility: visible;
+}
+.delivery-btn {
+    padding: .7rem 1rem;
+    background-color: var(--primary);
+    text-decoration: none;
+    color: #fff;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-weight: 500;
+    font-size: 1.1rem;
+    transition: .5s;
+    border: none;
+    margin-top: 5px;
+    /* border-radius: 10px; */
+}
